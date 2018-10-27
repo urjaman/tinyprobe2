@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:tinyprobe2-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -238,10 +239,10 @@ Text Label 6900 1350 0    50   ~ 0
 VBUS
 Wire Wire Line
 	7250 1350 6900 1350
-Text Label 1400 4000 0    50   ~ 0
+Text Label 1250 4000 0    50   ~ 0
 VBUS
 Wire Wire Line
-	1650 4000 1550 4000
+	1650 4000 1400 4000
 $Comp
 L Device:R_Small R5
 U 1 1 5BD22AE6
@@ -278,26 +279,26 @@ $EndComp
 Wire Wire Line
 	2750 4450 2750 4100
 Wire Wire Line
-	2050 4500 1550 4500
+	2050 4500 1400 4500
 Connection ~ 2050 4500
 $Comp
 L Device:C_Small C1
 U 1 1 5BD24FEC
-P 1550 4250
-F 0 "C1" H 1400 4300 50  0000 L CNN
-F 1 "1u" H 1400 4200 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1550 4250 50  0001 C CNN
-F 3 "~" H 1550 4250 50  0001 C CNN
-	1    1550 4250
+P 1400 4250
+F 0 "C1" H 1250 4300 50  0000 L CNN
+F 1 "1u" H 1250 4200 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1400 4250 50  0001 C CNN
+F 3 "~" H 1400 4250 50  0001 C CNN
+	1    1400 4250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1550 4150 1550 4000
-Connection ~ 1550 4000
+	1400 4150 1400 4000
+Connection ~ 1400 4000
 Wire Wire Line
-	1550 4000 1400 4000
+	1400 4000 1250 4000
 Wire Wire Line
-	1550 4350 1550 4500
+	1400 4350 1400 4500
 Text Label 2500 4100 0    50   ~ 0
 PROG
 Text Label 2500 4000 0    50   ~ 0
@@ -762,7 +763,6 @@ Wire Wire Line
 Wire Wire Line
 	6200 1250 6200 1100
 NoConn ~ 4000 1850
-NoConn ~ 5100 2750
 $Comp
 L Connector_Generic:Conn_01x01 J1
 U 1 1 5BE1CD7A
@@ -800,7 +800,6 @@ Wire Wire Line
 	1150 1900 1250 1900
 Wire Wire Line
 	1250 1900 1250 2000
-NoConn ~ 1650 4100
 NoConn ~ 8350 3300
 Text Label 5300 1250 2    50   ~ 0
 BTN
@@ -832,6 +831,63 @@ Wire Wire Line
 	5100 2050 5400 2050
 NoConn ~ 5100 2250
 NoConn ~ 5100 2150
-NoConn ~ 4000 2750
-NoConn ~ 4000 2650
+$Comp
+L Connector_Generic:Conn_01x02 J4
+U 1 1 5BD36A29
+P 1600 2750
+F 0 "J4" H 1520 2425 50  0000 C CNN
+F 1 "EIF" H 1520 2516 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1600 2750 50  0001 C CNN
+F 3 "~" H 1600 2750 50  0001 C CNN
+	1    1600 2750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1800 2650 2050 2650
+Wire Wire Line
+	1800 2750 2050 2750
+Text Label 2050 2750 2    50   ~ 0
+EI0
+Text Label 2050 2650 2    50   ~ 0
+EI1
+Wire Wire Line
+	4000 2650 3800 2650
+Wire Wire Line
+	4000 2750 3800 2750
+Text Label 3800 2650 0    50   ~ 0
+EI0
+Text Label 3800 2750 0    50   ~ 0
+EI1
+$Comp
+L Connector_Generic:Conn_01x01 J7
+U 1 1 5BD4F46F
+P 1600 3000
+F 0 "J7" H 1520 2775 50  0000 C CNN
+F 1 "VCCOUT" H 1520 2866 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 1600 3000 50  0001 C CNN
+F 3 "~" H 1600 3000 50  0001 C CNN
+	1    1600 3000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3V3 #PWR04
+U 1 1 5BD4F690
+P 2000 3000
+F 0 "#PWR04" H 2000 2850 50  0001 C CNN
+F 1 "+3V3" H 2015 3173 50  0000 C CNN
+F 2 "" H 2000 3000 50  0001 C CNN
+F 3 "" H 2000 3000 50  0001 C CNN
+	1    2000 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2000 3000 1800 3000
+Wire Wire Line
+	1650 4100 1450 4100
+Text Label 1450 4100 0    50   ~ 0
+~CHRG
+Text Label 5500 2750 2    50   ~ 0
+~CHRG
+Wire Wire Line
+	5500 2750 5100 2750
 $EndSCHEMATC
